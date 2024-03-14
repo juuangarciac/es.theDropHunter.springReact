@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-StartUpApplication<StartUp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "es.theDropHunter.StartUp.StartUpApplication",
+            "projectName": "StartUp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
