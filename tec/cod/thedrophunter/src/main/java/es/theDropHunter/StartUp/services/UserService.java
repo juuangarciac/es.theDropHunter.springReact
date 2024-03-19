@@ -9,9 +9,9 @@ import es.theDropHunter.StartUp.entities.User;
 public interface UserService {
     
     List<User> findAll();
-    Optional<User> findById(Integer id);
+    Optional<User> findById(Long id);
 
     User save(User user);
 
-    void delete(User user);
+    Optional<User> delete(User user);
 }

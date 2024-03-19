@@ -24,19 +24,24 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<User> findById(Integer id) {
+    public Optional<User> findById(Long id) {
         return repository.findById(id);
     }
 
+    @Transactional
     @Override
     public User save(User user) {
-        return null;
+        return repository.save(user);
     }
     
     @Transactional
     @Override
-    public void delete(User user) {
-
+    public Optional<User> delete(User user) {
+        Optional<User> userOptional = repository.findById(user.getId());
+        userOptional.ifPresent(userDb -> {
+            repository.delete(userDb);
+        });
+        return userOptional;
     }
 
 
